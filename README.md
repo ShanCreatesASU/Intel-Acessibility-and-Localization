@@ -1,4 +1,2 @@
-# Project 2: Intel Sustainability Journey
-Build an interactive webpage that presents Intel's sustainability goals in a timeline format. Using AI and your knowledge of responsive design, you'll experiment with hover effects, transitions, and layouts to ensure it adapts seamlessly to both desktop and mobile.
-
-Launch a Codespace to get started! Remember to Commit and Push your project changes to GitHub from Codespaces to prevent losing progress.
+# Project 3: Intel Sustainability Journey - with Localization and Accessibility in mind
+I have built an interactive webpage that presents Intel's sustainability goals in a timeline format. Using AI and my knowledge of responsive design, you'll see interactive elements that will be functional across different uuser needs, be it language or access needs.
