@@ -68,6 +68,52 @@ header p {
   opacity: 0.95;
 }
 
+/* Sticky Bootstrap navigation */
+.intel-navbar {
+  background: linear-gradient(90deg, #004b94 0%, #0071c5 100%);
+  box-shadow: 0 3px 10px rgba(0, 0, 0, 0.18);
+}
+
+.intel-navbar .navbar-brand,
+.intel-navbar .nav-link {
+  color: white;
+}
+
+.intel-navbar .navbar-brand {
+  font-weight: 700;
+}
+
+.intel-navbar .nav-link {
+  border-bottom: 2px solid transparent;
+  margin-inline-start: 12px;
+  transition: border-color 0.2s ease, color 0.2s ease;
+}
+
+.intel-navbar .nav-link:hover,
+.intel-navbar .nav-link:focus,
+.intel-navbar .nav-link.active {
+  color: white;
+  border-bottom-color: white;
+}
+
+.intel-navbar .navbar-toggler {
+  border-color: rgba(255, 255, 255, 0.7);
+}
+
+.intel-navbar .navbar-toggler:focus {
+  box-shadow: 0 0 0 0.2rem rgba(255, 255, 255, 0.35);
+}
+
+.intel-navbar .navbar-toggler-icon {
+  filter: brightness(0) invert(1);
+}
+
+#timeline,
+#columns,
+#newsletter {
+  scroll-margin-top: 76px;
+}
+
 /* ============================================
    4. TIMELINE CARDS SECTION
    ============================================ */
@@ -132,6 +178,50 @@ section {
 
 .newsletter-section {
   text-align: center;
+}
+
+.form-placeholder {
+  max-width: 850px;
+  margin-top: 30px;
+  padding: 32px;
+  background-color: white;
+  border-top: 5px solid #0071c5;
+  border-radius: 8px;
+  box-shadow: 0 4px 10px rgba(0, 71, 148, 0.12);
+  text-align: start;
+}
+
+.newsletter-form .form-label {
+  color: #004b94;
+  font-weight: 600;
+}
+
+.newsletter-form .form-control {
+  border: 1px solid #8ab9d9;
+}
+
+.newsletter-form .form-control:focus {
+  border-color: #0071c5;
+  box-shadow: 0 0 0 0.25rem rgba(0, 113, 197, 0.2);
+}
+
+.newsletter-form .form-check-input:checked {
+  background-color: #0071c5;
+  border-color: #0071c5;
+}
+
+.newsletter-submit {
+  padding: 8px 20px;
+  background-color: #0071c5;
+  color: white;
+  border: 1px solid #0071c5;
+}
+
+.newsletter-submit:hover,
+.newsletter-submit:focus {
+  background-color: #004b94;
+  border-color: #004b94;
+  color: white;
 }
 
 .site-footer {

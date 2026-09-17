@@ -29,8 +29,31 @@
     </div>
   </header>
 
-  <!-- Timeline Cards Carousel -->
-  <section class="timeline-carousel py-5">
+  <nav class="navbar navbar-expand-lg sticky-top intel-navbar" aria-label="Main navigation">
+    <div class="container">
+      <a class="navbar-brand" href="#timeline">Intel Sustainability</a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#mainNavigation" aria-controls="mainNavigation" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="mainNavigation">
+        <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
+          <li class="nav-item">
+            <a class="nav-link" href="#timeline">Timeline</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#columns">Sustainability Areas</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#newsletter">Newsletter</a>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+
+  <main>
+    <!-- Timeline Cards Carousel -->
+    <section class="timeline-carousel py-5" id="timeline">
     <div id="timelineCarousel" class="carousel slide" data-bs-touch="true">
       <div class="carousel-inner">
         <div class="carousel-item active">
@@ -128,10 +151,10 @@
         <span class="carousel-control-next-icon" aria-hidden="true"></span>
       </button>
     </div>
-  </section>
+    </section>
 
-  <!-- 3-Column Content Section -->
-  <section class="content-section py-5">
+    <!-- 3-Column Content Section -->
+    <section class="content-section py-5" id="columns">
     <div class="container">
       <div class="row g-4">
 
@@ -181,13 +204,38 @@
 
       </div>
     </div>
-  </section>
+    </section>
 
-  <!-- Subscription Form -->
-  <section class="newsletter-section">
+    <!-- Subscription Form -->
+    <section class="newsletter-section" id="newsletter">
     <h2>Subscribe to our Newsletter</h2>
-    <!-- Add form here -->
-  </section>
+    <div class="form-placeholder container">
+      <form class="newsletter-form">
+        <div class="row g-4">
+          <div class="col-12 col-md-6">
+            <label for="subscriberName" class="form-label">Name</label>
+            <input type="text" class="form-control" id="subscriberName" name="name" autocomplete="name" required>
+          </div>
+          <div class="col-12 col-md-6">
+            <label for="subscriberEmail" class="form-label">Email</label>
+            <input type="email" class="form-control" id="subscriberEmail" name="email" autocomplete="email" required>
+          </div>
+          <div class="col-12">
+            <div class="form-check">
+              <input class="form-check-input" type="checkbox" id="newsletterConsent" name="newsletterConsent" required>
+              <label class="form-check-label" for="newsletterConsent">
+                I would like to subscribe to Intel's Sustainability Newsletter.
+              </label>
+            </div>
+          </div>
+          <div class="col-12">
+            <button type="submit" class="btn newsletter-submit">Subscribe</button>
+          </div>
+        </div>
+      </form>
+    </div>
+    </section>
+  </main>
 
   <footer class="site-footer">
 
