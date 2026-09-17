@@ -225,8 +225,28 @@ section {
 }
 
 .site-footer {
-  min-height: 40px;
-  padding: 20px;
+  min-height: 100px;
+  padding: 32px 20px;
+  background-color: #004b94;
+  color: white;
+  border-top: 4px solid #0071c5;
+}
+
+.footer-copyright {
+  color: rgba(255, 255, 255, 0.9);
+}
+
+.footer-links a {
+  color: white;
+  text-decoration: none;
+  border-bottom: 2px solid transparent;
+  transition: color 0.2s ease, border-color 0.2s ease;
+}
+
+.footer-links a:hover,
+.footer-links a:focus {
+  color: white;
+  border-bottom-color: white;
 }
 
 
