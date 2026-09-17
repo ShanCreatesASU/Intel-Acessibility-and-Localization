@@ -163,6 +163,11 @@ section {
   background-color: white;
 }
 
+.content-icon {
+  color: #0071c5;
+  margin-inline-end: 8px;
+}
+
 .content-section a {
   display: inline-block;
   padding: 8px 16px;
