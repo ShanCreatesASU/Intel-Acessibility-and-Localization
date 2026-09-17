@@ -1,9 +1,10 @@
 <!DOCTYPE html>
-<html lang="en" dir="rtl">
+<html lang="en" dir="ltr">
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB" crossorigin="anonymous">
+  <link id="bootstrapLtr" rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css">
+  <link id="bootstrapRtl" rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.rtl.min.css" integrity="sha384-dpuaG1suU0eT09tx5plTaGMLBsfDLzUCCUXOY2j/LSvXYuG6Bqs43ALlhIqAJVRb" crossorigin="anonymous" disabled>
   <title>Intel: Sustainability Through the Ages</title>
   <link rel="stylesheet" href="style.css" />
 </head>
@@ -28,124 +29,106 @@
     </div>
   </header>
 
-  <!-- Timeline Cards Section -->
-  <div class="timeline-container">
-    <!-- Navigation Buttons -->
-    <button class="scroll-btn scroll-btn-left" onclick="scrollTimeline(-300)">❮</button>
-    <button class="scroll-btn scroll-btn-right" onclick="scrollTimeline(300)">❯</button>
-    
-    <section class="timeline" id="timelineScroll">
+  <!-- Timeline Cards Carousel -->
+  <section class="timeline-carousel py-5">
+    <div id="timelineCarousel" class="carousel slide" data-bs-touch="true">
+      <div class="carousel-inner">
+        <div class="carousel-item active">
+          <div class="row g-4 px-5">
+            <div class="col-12 col-md-6 col-lg-3">
+              <article class="card carousel-card">
+                <h2 class="card-year">1968</h2>
+                <h3 class="card-title">Intel Founded</h3>
+                <img src="img/1.jpg" alt="Intel Founders" class="card-img" />
+                <p class="card-text">Robert Noyce and Gordon Moore rename the newly formed company NM Electronics to Intel Corporation, laying the foundation for decades of technological innovation.</p>
+              </article>
+            </div>
+            <div class="col-12 col-md-6 col-lg-3">
+              <article class="card carousel-card">
+                <h2 class="card-year">1971</h2>
+                <h3 class="card-title">First Microprocessor</h3>
+                <img src="img/4004.jpg" alt="Intel 4004 Microprocessor" class="card-img" />
+                <p class="card-text">Intel debuts the 4004, the world's first commercial microprocessor, igniting the microprocessor revolution and propelling the future of computing devices.</p>
+              </article>
+            </div>
+            <div class="col-12 col-md-6 col-lg-3">
+              <article class="card carousel-card">
+                <h2 class="card-year">1978</h2>
+                <h3 class="card-title">8086 Processor</h3>
+                <img src="img/3.jpg" alt="Intel 8086 Processor" class="card-img" />
+                <p class="card-text">Launch of the 8086 processor, establishing the x86 architecture that drives countless PCs and servers in the modern era.</p>
+              </article>
+            </div>
+            <div class="col-12 col-md-6 col-lg-3">
+              <article class="card carousel-card">
+                <h2 class="card-year">1985</h2>
+                <h3 class="card-title">386 Processor</h3>
+                <img src="img/intel386.jpg" alt="Intel 386 Processor" class="card-img" />
+                <p class="card-text">Intel introduces the 386 processor with 32-bit architecture, ushering in a new era of performance and multitasking for personal computers.</p>
+              </article>
+            </div>
+          </div>
+        </div>
 
-    <!-- Card 1: 1968 -->
-    <div class="card">
-      <h2 class="card-year">1968</h2>
-      <h3 class="card-title">Intel Founded</h3>
-       <img src="img/1.jpg" alt="Intel Founders" class="card-img" />
-      <p class="card-text">
-        Robert Noyce and Gordon Moore rename the newly formed company 
-        NM Electronics to Intel Corporation, laying the foundation for 
-        decades of technological innovation.
-      </p>
-    </div>
+        <div class="carousel-item">
+          <div class="row g-4 px-5">
+            <div class="col-12 col-md-6 col-lg-3">
+              <article class="card carousel-card">
+                <h2 class="card-year">2006</h2>
+                <h3 class="card-title">Peak GHG Emissions</h3>
+                <img src="img/greenhouseemissions.jpg" alt="Intel Manufacturing Plant" class="card-img" />
+                <p class="card-text">This year marks Intel's highest annual greenhouse gas emissions for operations. Over subsequent years, Intel invests heavily in chemical abatement, renewable energy, and energy-efficient manufacturing to reverse this trend.</p>
+              </article>
+            </div>
+            <div class="col-12 col-md-6 col-lg-3">
+              <article class="card carousel-card">
+                <h2 class="card-year">2020</h2>
+                <h3 class="card-title">RISE Strategy</h3>
+                <img src="img/IntelRise.png" alt="Intel RISE Strategy" class="card-img" />
+                <p class="card-text">Intel launches its RISE (Responsible, Inclusive, Sustainable, Enabling) strategy and 2030 goals, aiming to drive industry-wide progress on climate action, water stewardship, and waste reduction.</p>
+              </article>
+            </div>
+            <div class="col-12 col-md-6 col-lg-3">
+              <article class="card carousel-card">
+                <h2 class="card-year">2022</h2>
+                <h3 class="card-title">Net-Zero By 2040</h3>
+                <img src="img/IntelNetZero.jpg" alt="Intel Net-Zero Commitment" class="card-img" />
+                <p class="card-text">Intel announces its commitment to achieve net-zero greenhouse gas emissions (Scope 1 and 2) across its global operations by 2040, building on years of environmental initiatives.</p>
+              </article>
+            </div>
+            <div class="col-12 col-md-6 col-lg-3">
+              <article class="card carousel-card">
+                <h2 class="card-year">2023</h2>
+                <h3 class="card-title">Renewable Electricity</h3>
+                <img src="img/IntelRenew.jpg" alt="Renewable Energy Sources" class="card-img" />
+                <p class="card-text">The company achieves 99% renewable electricity usage worldwide, helping to drastically lower carbon emissions and driving progress toward Intel's long-term sustainability goals.</p>
+              </article>
+            </div>
+          </div>
+        </div>
 
-    <!-- Card 2: 1971 -->
-    <div class="card">
-      <h2 class="card-year">1971</h2>
-      <h3 class="card-title">First Microprocessor</h3>
-      <img src="img/4004.jpg" alt="Intel 4004 Microprocessor" class="card-img" />
-      <p class="card-text">
-        Intel debuts the 4004, the world's first commercial microprocessor, 
-        igniting the microprocessor revolution and propelling the future 
-        of computing devices.
-      </p>
-    </div>
+        <div class="carousel-item">
+          <div class="row g-4 px-5">
+            <div class="col-12 col-md-6 col-lg-3">
+              <article class="card carousel-card">
+                <h2 class="card-year">2024</h2>
+                <h3 class="card-title">Sustainability Summit</h3>
+                <img src="img/intelSSummit.jpg" alt="Intel Sustainability Summit" class="card-img" />
+                <p class="card-text">Intel hosts its first Sustainability Summit, uniting suppliers, government officials, and industry leaders to collaborate on next-generation sustainable semiconductor manufacturing.</p>
+              </article>
+            </div>
+          </div>
+        </div>
+      </div>
 
-    <!-- Card 3: 1978 -->
-    <div class="card">
-      <h2 class="card-year">1978</h2>
-      <h3 class="card-title">8086 Processor</h3>
-      <img src="img/3.jpg" alt="Intel 8086 Processor" class="card-img" />
-      <p class="card-text">
-        Launch of the 8086 processor, establishing the x86 architecture 
-        that drives countless PCs and servers in the modern era.
-      </p>
+      <button class="carousel-control-prev" type="button" data-bs-target="#timelineCarousel" data-bs-slide="prev" aria-label="Show previous timeline cards">
+        <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+      </button>
+      <button class="carousel-control-next" type="button" data-bs-target="#timelineCarousel" data-bs-slide="next" aria-label="Show next timeline cards">
+        <span class="carousel-control-next-icon" aria-hidden="true"></span>
+      </button>
     </div>
-
-    <!-- Card 4: 1985 -->
-    <div class="card">
-      <h2 class="card-year">1985</h2>
-      <h3 class="card-title">386 Processor</h3>
-       <img src="img/intel386.jpg" alt="Intel 386 Processor" class="card-img" />
-      <p class="card-text">
-        Intel introduces the 386 processor with 32-bit architecture, 
-        ushering in a new era of performance and multitasking for 
-        personal computers.
-      </p>
-    </div>
-
-    <!-- Card 5: 2006 -->
-    <div class="card">
-      <h2 class="card-year">2006</h2>
-      <h3 class="card-title">Peak GHG Emissions</h3>
-       <img src="img/greenhouseemissions.jpg" alt="Intel Manufacturing Plant" class="card-img" />
-      <p class="card-text">
-        This year marks Intel's highest annual greenhouse gas emissions 
-        for operations. Over subsequent years, Intel invests heavily in 
-        chemical abatement, renewable energy, and energy-efficient 
-        manufacturing to reverse this trend.
-      </p>
-    </div>
-
-    <!-- Card 6: 2020 -->
-    <div class="card">
-      <h2 class="card-year">2020</h2>
-      <h3 class="card-title">RISE Strategy</h3>
-       <img src="img/IntelRise.png" alt="Intel RISE Strategy" class="card-img" />
-      <p class="card-text">
-        Intel launches its RISE (Responsible, Inclusive, Sustainable, 
-        Enabling) strategy and 2030 goals, aiming to drive industry-wide 
-        progress on climate action, water stewardship, and waste reduction.
-      </p>
-    </div>
-
-    <!-- Card 7: 2022 -->
-    <div class="card">
-      <h2 class="card-year">2022</h2>
-      <h3 class="card-title">Net-Zero By 2040</h3>
-      <img src="img/IntelNetZero.jpg" alt="Intel Net-Zero Commitment" class="card-img" />
-      <p class="card-text">
-        Intel announces its commitment to achieve net-zero greenhouse 
-        gas emissions (Scope 1 and 2) across its global operations 
-        by 2040, building on years of environmental initiatives.
-      </p>
-    </div>
-
-    <!-- Card 8: 2023 -->
-    <div class="card">
-      <h2 class="card-year">2023</h2>
-      <h3 class="card-title">Renewable Electricity</h3>
-      <img src="img/IntelRenew.jpg" alt="Renewable Energy Sources" class="card-img" />
-      <p class="card-text">
-        The company achieves 99% renewable electricity usage worldwide, 
-        helping to drastically lower carbon emissions and driving progress 
-        toward Intel's long-term sustainability goals.
-      </p>
-    </div>
-
-    <!-- Card 9: 2024 -->
-    <div class="card">
-      <h2 class="card-year">2024</h2>
-      <h3 class="card-title">Sustainability Summit</h3>
-      <img src="img/intelSSummit.jpg" alt="Intel Sustainability Summit" class="card-img" />
-      <p class="card-text">
-        Intel hosts its first Sustainability Summit, uniting suppliers, 
-        government officials, and industry leaders to collaborate on 
-        next-generation sustainable semiconductor manufacturing.
-      </p>
-    </div>
-    </section>
-  </div>
-  <p class="scroll-instructions">Scroll to view timeline | Hover over cards to learn more!</p>
+  </section>
 
   <!-- 3-Column Content Section -->
   <section class="content-section py-5">
@@ -209,16 +192,57 @@
   <footer class="site-footer">
 
   </footer>
-  
+
   <script>
-    // Function to scroll timeline left/right
-    function scrollTimeline(distance) {
-      const timeline = document.getElementById('timelineScroll');
-      timeline.scrollBy({
-        left: distance,
-        behavior: 'smooth'
-      });
+    const rtlLanguages = new Set([
+      'ar', 'arc', 'dv', 'fa', 'he', 'ku', 'ps', 'sd', 'syr', 'ug', 'ur', 'yi'
+    ]);
+    const page = document.documentElement;
+    const bootstrapLtr = document.getElementById('bootstrapLtr');
+    const bootstrapRtl = document.getElementById('bootstrapRtl');
+
+    function getTranslatedLanguage() {
+      const translateSelect = document.querySelector('.goog-te-combo');
+      const translatedClass = document.body.className.match(/translated-(?:ltr|rtl)/);
+      const language = translateSelect?.value || page.lang || '';
+
+      if (translatedClass?.[0] === 'translated-rtl') {
+        return 'rtl';
+      }
+
+      return language.toLowerCase().split('-')[0];
     }
+
+    function updatePageDirection() {
+      const language = getTranslatedLanguage();
+      const isRtl = language === 'rtl' || rtlLanguages.has(language);
+
+      page.dir = isRtl ? 'rtl' : 'ltr';
+      page.classList.toggle('rtl', isRtl);
+      document.body.classList.toggle('rtl', isRtl);
+      bootstrapLtr.disabled = isRtl;
+      bootstrapRtl.disabled = !isRtl;
+    }
+
+    const directionObserver = new MutationObserver(updatePageDirection);
+    directionObserver.observe(document.body, {
+      attributes: true,
+      attributeFilter: ['class'],
+      childList: true,
+      subtree: true
+    });
+    directionObserver.observe(page, {
+      attributes: true,
+      attributeFilter: ['lang']
+    });
+
+    document.addEventListener('change', (event) => {
+      if (event.target.matches('.goog-te-combo')) {
+        updatePageDirection();
+      }
+    });
+
+    updatePageDirection();
   </script>
 </body>
 </html>

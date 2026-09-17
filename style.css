@@ -76,67 +76,36 @@ section {
   background-color: white;
 }
 
-/* Timeline container wrapper */
-.timeline-container {
-  position: relative;
-  margin-bottom: 20px;
-  scrollbar-width: none; /* Firefox */
+/* Keep the Bootstrap carousel clipped and free of scrollbars. */
+.timeline-carousel {
+  overflow: hidden;
 }
 
-/* Hide the timeline scrollbar in WebKit browsers. */
-.timeline-container .timeline::-webkit-scrollbar {
-  display: none;
+.timeline-carousel .carousel {
+  overflow: hidden;
 }
 
-/* Navigation buttons */
-.scroll-btn {
-  position: absolute;
-  top: 50%;
-  transform: translateY(-50%);
-  background-color: rgba(0, 112, 197, 0.685);
-  color: white;
-  border: none;
-  width: 50px;
-  height: 50px;
+.timeline-carousel .carousel-inner {
+  overflow: hidden;
+  padding: 0 3rem 120px;
+}
+
+.timeline-carousel .carousel-item {
+  min-height: 350px;
+}
+
+.timeline-carousel .carousel-control-prev,
+.timeline-carousel .carousel-control-next {
+  width: 3rem;
+  opacity: 1;
+}
+
+.timeline-carousel .carousel-control-prev-icon,
+.timeline-carousel .carousel-control-next-icon {
+  background-color: rgba(0, 71, 148, 0.85);
   border-radius: 50%;
-  font-size: 1.5rem;
-  cursor: pointer;
-  z-index: 10;
-  transition: background-color 0.3s ease, box-shadow 0.3s ease;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-}
-
-.scroll-btn:hover {
-  background-color: rgba(0, 71, 148, 1);
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
-}
-
-.scroll-btn-left {
-  left: 10px;
-}
-
-.scroll-btn-right {
-  right: 10px;
-}
-
-.scroll-instructions {
-  text-align: center;
-  font-size: 1rem;
-  color: #555;
-  margin-top: 10px;
-}
-
-/* Container for horizontal scrolling */
-section.timeline {
-  overflow-x: auto;
-  display: flex;
-  flex-wrap: nowrap;
-  gap: 20px;
-  padding-bottom: 120px;
-  scroll-behavior: smooth;
-  scroll-snap-type: x mandatory;
+  padding: 1.5rem;
+  background-size: 1.25rem;
 }
 
 /* Keep the Bootstrap content cards readable at every width. */
@@ -171,29 +140,23 @@ section.timeline {
 }
 
 
-/* Style each timeline card */
-section.timeline > .card {
+.carousel-card {
   position: relative;
-  min-width: 300px;
-  max-width: 300px;
   height: 350px;
-  flex-shrink: 0;
   border-radius: 8px;
   overflow: hidden;
   box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
   transition: transform 0.3s ease, box-shadow 0.3s ease;
-  scroll-snap-align: start;
-  scroll-snap-stop: always;
 }
 
 /* Add hover effect to cards */
-section.timeline > .card:hover {
+.carousel-card:hover {
   transform: translateY(-5px);
   box-shadow: 0 8px 12px rgba(0, 0, 0, 0.15);
 }
 
 /* Card image styling - fills entire card as background */
-section.timeline > .card > .card-img {
+.carousel-card > .card-img {
   position: absolute;
   top: 0;
   left: 0;
@@ -206,7 +169,7 @@ section.timeline > .card > .card-img {
 }
 
 /* Year heading overlay */
-section.timeline > .card > .card-year {
+.carousel-card > .card-year {
   position: absolute;
   top: 20px;
   left: 30px;
@@ -221,7 +184,7 @@ section.timeline > .card > .card-year {
 }
 
 /* Card title heading overlay */
-section.timeline > .card > .card-title {
+.carousel-card > .card-title {
   position: absolute;
   top: 70px;
   left: 30px;
@@ -236,7 +199,7 @@ section.timeline > .card > .card-title {
 }
 
 /* Card paragraph text - overlay */
-section.timeline > .card > .card-text {
+.carousel-card > .card-text {
   position: absolute;
   bottom: 0;
   left: 0;
@@ -255,13 +218,13 @@ section.timeline > .card > .card-text {
 }
 
 /* Show text overlay on card hover */
-section.timeline > .card:hover > .card-text {
+.carousel-card:hover > .card-text {
   opacity: 1;
 }
 
 /* Fade out year and title on hover to show text */
-section.timeline > .card:hover > .card-year,
-section.timeline > .card:hover > .card-title {
+.carousel-card:hover > .card-year,
+.carousel-card:hover > .card-title {
   opacity: 0;
   transition: opacity 0.3s ease-in-out;
 }
@@ -273,7 +236,7 @@ section.timeline > .card:hover > .card-title {
 /* Tablets and smaller devices (768px and below) */
 @media (max-width: 768px) {
   /* Reduce vertical space for regular sections on smaller screens. */
-  section:not(.timeline) {
+  section:not(.timeline-carousel) {
     padding: 60px 16px;
   }
 
@@ -290,25 +253,12 @@ section.timeline > .card:hover > .card-title {
     font-size: 1rem;
   }
 
-  /* Adjust navigation buttons for tablets */
-  .scroll-btn {
-    width: 45px;
-    height: 45px;
-    font-size: 1.2rem;
+  .timeline-carousel .carousel-inner {
+    padding-left: 2.5rem;
+    padding-right: 2.5rem;
   }
 
-  .scroll-btn-left {
-    left: 5px;
-  }
-
-  .scroll-btn-right {
-    right: 5px;
-  }
-
-  /* Keep horizontal scrolling on tablets */
-  section.timeline > .card {
-    min-width: 280px;
-    max-width: 280px;
+  .carousel-card {
     height: 330px;
   }
 }
@@ -316,7 +266,7 @@ section.timeline > .card:hover > .card-title {
 /* Mobile devices (480px and below) */
 @media (max-width: 480px) {
   /* Keep the content sections comfortable on narrow screens. */
-  section:not(.timeline) {
+  section:not(.timeline-carousel) {
     padding: 40px 15px;
   }
 
@@ -337,44 +287,26 @@ section.timeline > .card:hover > .card-title {
     max-width: 70px;
   }
 
-  /* Keep horizontal scrolling on mobile */
-  section.timeline {
-    padding: 0 45px 80px;
+  .timeline-carousel .carousel-inner {
+    padding: 0 2.25rem 80px;
   }
 
-  /* Adjust navigation buttons for mobile */
-  .scroll-btn {
-    width: 40px;
-    height: 40px;
-    font-size: 1rem;
-  }
-
-  .scroll-btn-left {
-    left: 0px;
-  }
-
-  .scroll-btn-right {
-    right: 0px;
-  }
-
-  section.timeline > .card {
-    min-width: 250px;
-    max-width: 250px;
+  .carousel-card {
     height: 300px;
   }
 
   /* Reduce font sizes on mobile */
-  section.timeline > .card .card-year {
+  .carousel-card .card-year {
     font-size: 1.5rem;
     top: 15px;
   }
 
-  section.timeline > .card .card-title {
+  .carousel-card .card-title {
     font-size: 1.1rem;
     top: 60px;
   }
 
-  section.timeline > .card .card-text {
+  .carousel-card .card-text {
     font-size: 0.9rem;
     padding: 150px 20px 20px 20px;
   }
