@@ -17,6 +17,7 @@ body {
   line-height: 1.6;
   color: #333;
   background-color: #f9f9f9;
+  overflow-x: hidden;
 }
 
 /* ============================================
@@ -47,6 +48,7 @@ header div {
 
 /* Logo image styling */
 header img {
+  width: 100%;
   max-width: 200px;
     height: auto;
     margin-bottom: 50px;
@@ -79,7 +81,11 @@ section {
   position: relative;
   margin-bottom: 20px;
   scrollbar-width: none; /* Firefox */
-  ::-webkit-scrollbar { display: none; }
+}
+
+/* Hide the timeline scrollbar in WebKit browsers. */
+.timeline-container .timeline::-webkit-scrollbar {
+  display: none;
 }
 
 /* Navigation buttons */
@@ -131,6 +137,37 @@ section.timeline {
   padding-bottom: 120px;
   scroll-behavior: smooth;
   scroll-snap-type: x mandatory;
+}
+
+/* Keep the Bootstrap content cards readable at every width. */
+.content-section .container {
+  width: 100%;
+}
+
+.content-section .border {
+  background-color: white;
+}
+
+.content-section a {
+  display: inline-block;
+  padding: 8px 16px;
+  background-color: #0071c5;
+  color: white;
+  text-decoration: none;
+  border-radius: 4px;
+}
+
+.content-section a:hover {
+  background-color: #004b94;
+}
+
+.newsletter-section {
+  text-align: center;
+}
+
+.site-footer {
+  min-height: 40px;
+  padding: 20px;
 }
 
 
@@ -235,6 +272,11 @@ section.timeline > .card:hover > .card-title {
 
 /* Tablets and smaller devices (768px and below) */
 @media (max-width: 768px) {
+  /* Reduce vertical space for regular sections on smaller screens. */
+  section:not(.timeline) {
+    padding: 60px 16px;
+  }
+
   /* Reduce header padding and font sizes */
   header {
     padding: 40px 20px;
@@ -273,6 +315,11 @@ section.timeline > .card:hover > .card-title {
 
 /* Mobile devices (480px and below) */
 @media (max-width: 480px) {
+  /* Keep the content sections comfortable on narrow screens. */
+  section:not(.timeline) {
+    padding: 40px 15px;
+  }
+
   /* Further reduce header padding and font sizes */
   header {
     padding: 30px 15px;
@@ -292,7 +339,7 @@ section.timeline > .card:hover > .card-title {
 
   /* Keep horizontal scrolling on mobile */
   section.timeline {
-    padding: 120px;
+    padding: 0 45px 80px;
   }
 
   /* Adjust navigation buttons for mobile */
